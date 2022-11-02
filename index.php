@@ -1,10 +1,12 @@
 <?php get_header() ?>
 
-    <?php $movieLoop = new WP_Query(array("post_type" => "movie", "posts_per_page" => -1)) ?>
-    <?php while ($movieLoop->have_posts()) : $movieLoop->the_post() ?>
-        <div class="col-3">
-            <?php get_template_part("template-parts/movie-card") ?>
-        </div>
-    <?php endwhile ?>
-
+    <?php $cropLoop = new WP_Query(array("post_type" => "crop", "posts_per_page" => -1)) ?>
+    <div class="col-8">
+        <ul>
+            <?php while ($cropLoop->have_posts()) : $cropLoop->the_post() ?>
+                <li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+            <?php endwhile ?>
+        </ul>
+    </div>
+    
 <?php get_footer() ?>
