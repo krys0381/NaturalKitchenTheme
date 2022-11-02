@@ -7,3 +7,7 @@ Description: Used for the Kitchen Garden website
 h1 {
     padding: 0.5em 0.5em;
 }
+
+body {
+    background-color: red!important;
+}
